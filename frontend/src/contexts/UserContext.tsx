@@ -18,6 +18,17 @@ const UserProvider: FC<UserProviderProps> = ({children}) => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
     const nav = useNavigate();
 
+    // ? Login
+    const Login = ({username, password}: Login) => {
+        // TODO make API call to backend
+        try {
+             
+        } catch(err) {
+            console.log(err);
+            // TODO write proper error alert
+        }
+    }
+
     const value = {user, isLoggedIn};
 
     return (

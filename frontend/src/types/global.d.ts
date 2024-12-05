@@ -21,4 +21,9 @@ declare global {
     type Settings = {
         Language: string;
     }
+
+    type Login = {
+        username: string;
+        password: string;
+    }
 }
