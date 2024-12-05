@@ -19,3 +19,4 @@ const SettingsProvider: FC<SettingsProviderProps> = ({children}) => {
     )
 }
 
+export default SettingsProvider;

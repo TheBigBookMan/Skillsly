@@ -1,4 +1,13 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react';
+import Login from './pages/Login';
+
+interface ProtectedRouteInterface {
+  	children: ReactNode;
+}
+
+interface ProtextedLayoutInterface {
+	children: ReactNode;
+}
 
 function App() {
 
@@ -6,11 +15,11 @@ function App() {
         console.log("here");
     }
 
-  return (
-    <div>
-        <p>Hey</p>
-    </div>
-  )
+	return (
+		<div>
+			<p>Hey</p>
+		</div>
+	)
 }
 
 export default App
