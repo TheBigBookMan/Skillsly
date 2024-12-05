@@ -29,6 +29,16 @@ const UserProvider: FC<UserProviderProps> = ({children}) => {
         }
     }
 
+    // ? Signup
+    const Signup = ({username, email, password}: Signup) => {
+        // TODO make API call to backend
+        try {
+
+        } catch(err) {
+            console.log(err);
+        }
+    }
+
     const value = {user, isLoggedIn};
 
     return (

@@ -26,4 +26,10 @@ declare global {
         username: string;
         password: string;
     }
+
+    type Signup = {
+        username: string;
+        email: string;
+        password: string;
+    }
 }
