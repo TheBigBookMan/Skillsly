@@ -1,4 +1,4 @@
-const {registerUser, loginUser} = require('../services/authService');
+const AuthService = require('../services/authService');
 
 class AuthController {
     
@@ -6,10 +6,10 @@ class AuthController {
         const {email, password} = req.body;
     
         try {
-            const response = await registerUser({email, password});
-            res.status(201).json(response.data);
+            const response = await AuthService.registerUser(email, password);
+            res.status(201).json(response);
         } catch(err) {
-            res.status(err.response?.status || 500).json({message: err.message});
+            res.status(err.status || 500).json({message: err.message});
         }
     }
     
@@ -17,10 +17,10 @@ class AuthController {
         const {email, password} = req.body;
     
         try {
-            const response = await loginUser({email, password});
-            res.status(200).json(response.data);
+            const response = await AuthService.loginUser(email, password);
+            res.status(200).json(response);
         } catch(err) {
-            res,status(err.response?.status || 500).json({message: err.message});
+            res,status(err.status || 500).json({message: err.message});
         }
     }
 }
