@@ -1,0 +1,6 @@
+@SkillslyAuth.Api_HostAddress = http://localhost:5270
+
+GET {{SkillslyAuth.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

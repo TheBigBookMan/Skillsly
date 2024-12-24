@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "o3lYglrRobj041vX286oHDNTZa17RErQuy3iVV3+5+s=",
+  "Source": "SkillslyAuth.Api",
+  "BasePath": "_content/SkillslyAuth.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
