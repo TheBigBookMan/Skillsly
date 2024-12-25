@@ -14,16 +14,30 @@ public class AuthService
 
     public async Task<bool> RegisterUser(string FirstName, string LastName, string Email, string Password)
     {
-        // TODO use the UserExists method
+        if(await _userRepository.UserExists(Email))
+        {
+            throw new Exception("User already exists.");
+        }
 
-        // TODO if not then return with error about user exists already
+        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password);
 
-        // TODO if all good then create user
+        var user = new User{
+            Id = Guid.NewGuid(),
+            Email = Email,
+            PasswordHash = hashedPassword,
+            FirstName = FirstName,
+            LastName = LastName,
+            CreatedAt = DateTime.UtcNow
+        };
 
+        await _userRepository.AddUserAsync(user);
+
+        return true;
     }
 
     public async Task<bool> LoginUser(string Email, string Password)
     {
+        
 
     }
 }
