@@ -4,14 +4,14 @@ namespace AuthService.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {
-    private readonly ApplicationContext _context;
+    private readonly ApplicationDbContext _context;
 
     public UserRepository(ApplicationDbContext context)
     {
         _context = context;
     }
 
-    public async Task<void> AddUserAsync(UserRepository user)
+    public async Task<bool> AddUserAsync(UserRepository user)
     {
         
     }
@@ -23,7 +23,7 @@ public class UserRepository : IUserRepository
 
     public async Task<bool> UserExists(string email)
     {
-        
+
     }
 
 }
