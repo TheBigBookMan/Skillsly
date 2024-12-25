@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkillslyAuth.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54c57e281fab6da3b26a586c659bb36b4a89d1d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31572b5ace0c4f415efa7462c1ede686af6a4c7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkillslyAuth.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkillslyAuth.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
