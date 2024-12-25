@@ -35,9 +35,15 @@ public class AuthService
         return true;
     }
 
-    public async Task<bool> LoginUser(string Email, string Password)
+    public async Task<string> LoginUser(string Email, string Password)
     {
-        
+        var user = await _userRepository.GetUserByEmail(Email);
 
+        if(user == null || !BCrypt.Net.BCrypt.Verify(Password, user.PasswordHash))
+        {
+            throw new Exception("Invalid credentials.");
+        }
+
+        return JwtHelper.GenerateJwt(user.Id, user.Email);
     }
 }
