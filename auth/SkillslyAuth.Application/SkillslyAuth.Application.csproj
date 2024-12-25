@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SkillslyAuth.Domain\SkillslyAuth.Domain.csproj" />
+    <ProjectReference Include="..\SkillslyAuth.Infrastructure\SkillslyAuth.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

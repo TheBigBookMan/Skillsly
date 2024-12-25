@@ -265,19 +265,6 @@
           }
         }
       },
-      "SkillslyAuth.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "SkillslyAuth.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SkillslyAuth.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SkillslyAuth.Application.dll": {}
-        }
-      },
       "SkillslyAuth.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -701,11 +688,6 @@
         "postgresql.png"
       ]
     },
-    "SkillslyAuth.Application/1.0.0": {
-      "type": "project",
-      "path": "../SkillslyAuth.Application/SkillslyAuth.Application.csproj",
-      "msbuildProject": "../SkillslyAuth.Application/SkillslyAuth.Application.csproj"
-    },
     "SkillslyAuth.Domain/1.0.0": {
       "type": "project",
       "path": "../SkillslyAuth.Domain/SkillslyAuth.Domain.csproj",
@@ -715,7 +697,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.2",
-      "SkillslyAuth.Application >= 1.0.0",
       "SkillslyAuth.Domain >= 1.0.0"
     ]
   },
@@ -744,9 +725,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Application/SkillslyAuth.Application.csproj": {
-              "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Application/SkillslyAuth.Application.csproj"
-            },
             "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj": {
               "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj"
             }

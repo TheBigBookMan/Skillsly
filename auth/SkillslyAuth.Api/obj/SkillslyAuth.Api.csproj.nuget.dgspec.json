@@ -64,6 +64,8 @@
               "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
             }
@@ -115,6 +117,9 @@
             "projectReferences": {
               "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj": {
                 "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj"
+              },
+              "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/SkillslyAuth.Infrastructure.csproj": {
+                "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/SkillslyAuth.Infrastructure.csproj"
               }
             }
           }
@@ -235,9 +240,6 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Application/SkillslyAuth.Application.csproj": {
-                "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Application/SkillslyAuth.Application.csproj"
-              },
               "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj": {
                 "projectPath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Domain/SkillslyAuth.Domain.csproj"
               }
@@ -259,6 +261,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

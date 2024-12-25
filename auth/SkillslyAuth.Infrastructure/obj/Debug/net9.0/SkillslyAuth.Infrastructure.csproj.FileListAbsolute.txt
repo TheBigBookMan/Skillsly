@@ -1,0 +1,6 @@
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.csproj.AssemblyReference.cache
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.AssemblyInfoInputs.cache
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.AssemblyInfo.cs
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Infrastructure/obj/Debug/net9.0/SkillslyAuth.Infrastructure.sourcelink.json

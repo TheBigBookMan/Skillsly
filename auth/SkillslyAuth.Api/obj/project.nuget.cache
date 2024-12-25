@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "s7SUKbccKE4=",
+  "dgSpecHash": "DiaWFvgd6p0=",
   "success": true,
   "projectFilePath": "/Users/benjaminsmerd/Documents/ben/apps/skillsly/auth/SkillslyAuth.Api/SkillslyAuth.Api.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,8 @@
     "/Users/benjaminsmerd/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/benjaminsmerd/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/Users/benjaminsmerd/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
+    "/Users/benjaminsmerd/.nuget/packages/npgsql/9.0.2/npgsql.9.0.2.nupkg.sha512",
+    "/Users/benjaminsmerd/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.2/npgsql.entityframeworkcore.postgresql.9.0.2.nupkg.sha512",
     "/Users/benjaminsmerd/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/Users/benjaminsmerd/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/Users/benjaminsmerd/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

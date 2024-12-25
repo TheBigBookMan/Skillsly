@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\SkillslyAuth.Application\SkillslyAuth.Application.csproj" />
     <ProjectReference Include="..\SkillslyAuth.Domain\SkillslyAuth.Domain.csproj" />
   </ItemGroup>
 

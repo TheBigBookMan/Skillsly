@@ -3,7 +3,7 @@ using AuthService.Domain;
 
 namespace AuthService.Infrastructure;
 
-public class ApplicationDbContext : ApplicationDbContext
+public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
