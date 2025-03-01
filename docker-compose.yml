@@ -10,4 +10,4 @@ services:
     volumes:
       - ./services/auth-service:/app
       - /app/node_modules
-    restart: always
+    command: ["npx", "nodemon", "server.js"]

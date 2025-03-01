@@ -6,4 +6,4 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 EXPOSE 5001
-CMD ["node", "server.js"]
+CMD ["node", "nodemon", "server.js"]
