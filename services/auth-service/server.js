@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const admin = require("firebase-admin");
+const admin = require("./firebase-config");
 
 dotenv.config();
 
@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 });
 
 const verifyToken = async (req, res, next) => {
-    console.log(req.headers);
     const token = req.headers.authorization;
 
     if(!token) {
@@ -31,7 +30,7 @@ const verifyToken = async (req, res, next) => {
         next();
 
     } catch(err) {
-        res.status(401).json({ error: "Invalid token" });
+        res.status(401).json({ error: "Invalid token", message: err });
     }
 }
 
