@@ -2,3 +2,4 @@
 /services/auth-service/package.json
 /services/auth-service/package-lock.json
 /services/auth-service/.env
+/services/auth-service/firebase-service-account.json
