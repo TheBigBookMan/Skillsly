@@ -23,6 +23,34 @@ class UserController {
         }
     }
 
+    async createUser(req: Request, res: Response) {
+        const {username, name, email, bio} = req.body;
+
+        // ? Check if username and email already exist
+        try {
+
+            const [existingUser] = await pool.query("SELECT id FROM users WHERE username = ?", [username, email]);
+
+            if(Array.isArray(existingUser) && existingUser.length > 0) {
+                return res.status(409).json({ message: "Username already exists" });
+            }
+
+            // ? Add in post information
+            const [result] = await pool.query("INSERT INTO users(username, name, bio, email) VALUES (?, ?, ?, ?)", 
+                [username, name, bio, email]
+            );
+
+            res.status(201).json({
+                message: "User created successfully",
+                userId: (result as any).insertId
+            });
+
+        } catch(err) {
+            console.error(err);
+            res.status(500).json({ message: 'Server error' });
+        }
+    }
+
     async getAllUsers(req: Request, res: Response) {
         try {
 
