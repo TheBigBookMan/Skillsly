@@ -7,7 +7,7 @@ class SkillController {
         
         try {
 
-            const [skill] = await pool.query("SELECT * FROM skills WHERE id = ?", [id]);
+            const [skill] = await pool.query("SELECT * FROM skills WHERE id = ? AND Status != 'D'", [id]);
 
             if(!skill || (Array.isArray(skill) && skill.length === 0)) {
                 return res.status(404).json({ error: 'Skill not found' });
@@ -24,7 +24,7 @@ class SkillController {
     async getAllSkills(req: Request, res: Response) {
         try {
 
-            const [skills] = await pool.query("SELECT * FROM skills");
+            const [skills] = await pool.query("SELECT * FROM skills WHERE Status != 'D'");
 
             if(!skills || (Array.isArray(skills) && skills.length === 0)) {
                 return res.status(404).json({ error: 'No skills found' });
@@ -46,7 +46,7 @@ class SkillController {
 
         try {
 
-            const [existingSkill] = await pool.query("SELECT id FROM skills WHERE id = ?", [id]);
+            const [existingSkill] = await pool.query("SELECT id FROM skills WHERE id = ? AND Status != 'D'", [id]);
 
             if(!Array.isArray(existingSkill) || existingSkill.length === 0) {
                 return res.status(404).json({ message: "Skill not found" });
