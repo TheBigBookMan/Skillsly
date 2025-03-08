@@ -3,10 +3,12 @@ import pool from '../config/db';
 
 class UserController {
     async getUser(req: Request, res: Response) {
+        const {id} = req.params;
+
         try {
 
             const [user] = await pool.query("SELECT * FROM users WHERE id = ?", [
-                req.params.id
+                id
             ]);
 
             if(!user || (Array.isArray(user) && user.length === 0)) {
@@ -38,10 +40,11 @@ class UserController {
         }
     } 
 
+    // ? Only adds a Status = 'D' in table users, so user can reinstate
     async deleteUser(req: Request, res: Response) {
         const {id} = req.params;
 
-        if(!id) return res.status(400).json({ error: 'Id not found' });
+        if(!id) return res.status(400).json({ error: 'Id not given' });
 
         try {
 
@@ -62,6 +65,34 @@ class UserController {
         } catch(err) {
             console.error(err);
             res.status(500).json({ message: 'Server error' });
+        }
+    }
+
+    // ? Only changes Status = '' in table users so it's reinstated
+    async reinstateUser(req: Request, res: Response) {
+        const {id} = req.params;
+
+        if(!id) return res.status(400).json({ message: "Id not given" });
+
+        try {
+
+            const [existingUser] = await pool.query("SELECT id FROM users WHERE id = ?", [id]);
+
+            if(!Array.isArray(existingUser) || existingUser.length === 0) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            const [result] = await pool.query("UPDATE users SET Status = '' WHERE i = ?", [id]);
+
+            if((result as any).affectedRows === 0) {
+                return res.status(400).json({ message: "Failed to reinstate user" });
+            }
+
+            res.status(200).json({ message: 'Successfully reinstated user' });
+
+        } catch(err) {
+            console.error(err);
+            res.status(500).json({ message: "Server error" });
         }
     }
 }
