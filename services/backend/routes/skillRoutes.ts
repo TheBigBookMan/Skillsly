@@ -10,6 +10,7 @@ router.post('/', SkillController.createSkill);
 // ? /:id
 router.get('/:id', SkillController.getSkill);
 router.put('/:id', SkillController.updateSkill);
+// * Just adds Status = 'D'
 router.delete('/:id', SkillController.deleteSkill);
 
 export default router;
