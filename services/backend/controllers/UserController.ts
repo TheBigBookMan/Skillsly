@@ -21,6 +21,22 @@ class UserController {
         }
     }
 
+    async getAllUsers(req: Request, res: Response) {
+        try {
+
+            const [rows] = await pool.query("SELECT * FROM users");
+
+            if(!rows || (Array.isArray(rows) && rows.length === 0)) {
+                return res.status(404).json({ error: 'No users found' });
+            }
+
+            res.json(rows);
+
+        } catch(err) {
+            console.error(err);
+            res.status(500).json({ error: 'Server error' });
+        }
+    } 
 }
 
 export default new UserController();
