@@ -5,15 +5,15 @@ class UserController {
     async getUser(req: Request, res: Response) {
         try {
 
-            const [rows] = await pool.query("SELECT * FROM users WHERE id = ?", [
+            const [user] = await pool.query("SELECT * FROM users WHERE id = ?", [
                 req.params.id
             ]);
 
-            if(!rows || (Array.isArray(rows) && rows.length === 0)) {
+            if(!user || (Array.isArray(user) && user.length === 0)) {
                 return res.status(404).json({ error: 'User not found' });
             }
 
-            res.json(rows);
+            res.json(user);
 
         } catch(err) {
             console.error(err);
@@ -24,13 +24,13 @@ class UserController {
     async getAllUsers(req: Request, res: Response) {
         try {
 
-            const [rows] = await pool.query("SELECT * FROM users");
+            const [users] = await pool.query("SELECT * FROM users");
 
-            if(!rows || (Array.isArray(rows) && rows.length === 0)) {
+            if(!users || (Array.isArray(users) && users.length === 0)) {
                 return res.status(404).json({ error: 'No users found' });
             }
 
-            res.json(rows);
+            res.json(users);
 
         } catch(err) {
             console.error(err);
