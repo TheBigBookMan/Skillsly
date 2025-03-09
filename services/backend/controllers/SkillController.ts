@@ -23,6 +23,23 @@ class SkillController {
         }
     }
 
+    async getAllSkillsPublic(req: Request, res: Response) {
+        try {
+
+            const [skills] = await pool.query("SELECT name, description, followers, teachers FROM skills WHERE Status != 'D'");
+
+            if(!skills || (Array.isArray(skills) && skills.length === 0)) {
+                return res.status(404).json({ error: 'No skills found' });
+            }
+
+            res.json(skills)
+
+        } catch(err) {
+            console.error(err);
+            res.status(500).json({ error: 'Server error' });
+        }
+    }
+
     async getSkill(req: Request, res: Response) {
         const {id} = req.params;
         
