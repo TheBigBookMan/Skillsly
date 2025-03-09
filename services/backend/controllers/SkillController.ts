@@ -2,6 +2,27 @@ import { Request, Response } from "express";
 import pool from "../config/db";
 
 class SkillController {
+    async getSkillPublic(req: Request, res: Response) {
+        const {id} = req.params;
+
+        if(!id) return res.status(400).json({ message: 'Id not given' });
+
+        try {
+
+            const [skill] = await pool.query("SELECT name, description, followers, teachers FROM skills WHERE id = ? AND Status != 'D'");
+
+            if(!skill || (Array.isArray(skill) && skill.length === 0)) {
+                return res.status(404).json({ error: 'Skill not found' });
+            }
+
+            res.json(skill);
+
+        } catch(err) {
+            console.error(err);
+            res.status(500).json({ message: 'Server error' });
+        }
+    }
+
     async getSkill(req: Request, res: Response) {
         const {id} = req.params;
         

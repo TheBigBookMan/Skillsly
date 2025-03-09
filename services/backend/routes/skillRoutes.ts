@@ -5,7 +5,10 @@ import { verifyJwtWithAuthService } from '../middleware/authMiddleware';
 const router = express.Router();
 
 // * Public routes- no auth needed
-// TODO make a route to get a skill for someone who isnt logged in to be able to see some info for a skill
+
+
+// ? /public/:id
+router.get('/public/:id', SkillController.getSkillPublic)
 
 // * Protected routes- auth needed
 // ? /
