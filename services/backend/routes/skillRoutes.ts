@@ -5,7 +5,8 @@ import { verifyJwtWithAuthService } from '../middleware/authMiddleware';
 const router = express.Router();
 
 // * Public routes- no auth needed
-
+// ? /public/
+router.get('/public', SkillController.getAllSkillsPublic)
 
 // ? /public/:id
 router.get('/public/:id', SkillController.getSkillPublic)
