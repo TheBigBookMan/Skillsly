@@ -59,7 +59,7 @@ app.post("/auth/login", verifyFirebaseToken, (req, res) => {
     const user = req.user;
 
     const jwtToken = jwt.sign(
-        { uid: user.uid, email: user.email, role: user.role || "user" },
+        { uid: user.uid, email: user.email, username: user.username },
         process.env.JWT_SECRET,
         { expiresIn: process.env.JWT_EXPIRES_IN }
     );
