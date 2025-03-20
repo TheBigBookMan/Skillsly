@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const metadata: Metadata = {
     title: 'Skillsly',
     description: 'Learn and teach skills for points'
 };
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -15,9 +18,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <AuthProvider>
-                    {children}
-                </AuthProvider>
+                <QueryClientProvider client={queryClient}>
+                    <AuthProvider>
+                        {children}
+                    </AuthProvider>
+                </QueryClientProvider>
             </body>
         </html>
     );
