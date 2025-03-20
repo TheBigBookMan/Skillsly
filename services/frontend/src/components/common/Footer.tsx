@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-        <div>
-            <p>Foorter</p>
-        </div>
+        <footer className='w-full bg-gray-900 text-white text-center py-4'>
+            <p>@ {new Date().getFullYear()} Skillsly. All rights reserved.</p>
+        </footer>
     )
 }
 
