@@ -4,7 +4,7 @@ import "./globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import { usePathname } from "next/navigation";
+import LayoutWrapper from "@/components/common/LayoutWrapper";
 
 export const metadata: Metadata = {
     title: 'Skillsly',
@@ -19,22 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-    const pathname = usePathname();
-
-    const authPages = ["/login", "/register"];
-
     return (
         <html lang="en">
             <body>
                 <QueryClientProvider client={queryClient}>
                     <AuthProvider>
-                        <main className="min-h-screen flex flex-col">
-                            {!authPages.includes(pathname) && <Header />}
-
-                            {children}
-
-                            {!authPages.includes(pathname) && <Footer />}
-                        </main>
+                        <LayoutWrapper>{children}</LayoutWrapper>
                     </AuthProvider>
                 </QueryClientProvider>
             </body>
