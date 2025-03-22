@@ -17,7 +17,7 @@ const LayoutWrapper = ({children}: {children: React.ReactNode}) => {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <div className="flex flex-col h-screen w-full">
+            <div className="flex flex-col h-screen w-full bg-gray-900 text-slate-200 font-pop">
                 {showLayout && <Header />}
                 <main className="flex-1 overflow-y-auto">{children}</main>
                 {showLayout && <Footer />}
