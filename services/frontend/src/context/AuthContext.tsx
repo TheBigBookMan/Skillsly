@@ -1,8 +1,10 @@
+"use client";
+
 import {createContext, useContext, useEffect, useState, ReactNode} from 'react';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import {auth} from '@/lib/firebase';
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 type AuthContextType = {
     user: User | null;

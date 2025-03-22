@@ -23,7 +23,7 @@ const Header = () => {
 
             <div className='flex gap-6'>
                 <Link href="/skills" >Skills</Link>
-                <Link href="/profile/[profileId]" >Profile</Link>
+                {/* <Link href="/profile/[profileId]" >Profile</Link> */}
                 <Link href="/inbox">Inbox</Link>
                 <Link href="/lessons">Lessons</Link>
             </div>
